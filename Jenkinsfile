@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.3.9-jdk-8'
-    }
-
-  }
+  agent any
   stages {
-    stage('error') {
+    stage('pull image') {
       steps {
         echo 'eee'
+        sh 'docker pull maven:3.3.9-jdk-8'
       }
     }
   }
