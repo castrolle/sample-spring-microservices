@@ -13,10 +13,7 @@ pipeline {
     }
     stage('maven') {
       steps {
-        sh '''echo PATH=${PATH}
-echo M2_HOME=${M2_HOME}
-mvn --version
-ls'''
+        sh 'mvn clean package -f account-service/pom.xml'
       }
     }
   }
