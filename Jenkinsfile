@@ -11,10 +11,11 @@ pipeline {
         sh 'ls'
       }
     }
-    stage('') {
+    stage('maven') {
       steps {
         sh '''echo PATH=${PATH}
 echo M2_HOME=${M2_HOME}
+mvn --version
 '''
       }
     }
