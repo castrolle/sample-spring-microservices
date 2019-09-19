@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'account-service/Dockerfile'
+    docker {
+      image 'maven:3.3.9-jdk-8'
     }
 
   }
