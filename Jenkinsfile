@@ -13,7 +13,8 @@ pipeline {
     }
     stage('maven') {
       steps {
-        sh 'mvn clean package -f account-service/pom.xml'
+        sh '''more account-service/pom.xml
+#mvn clean package -f account-service/pom.xml'''
       }
     }
   }
