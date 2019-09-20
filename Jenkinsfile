@@ -23,10 +23,5 @@ pipeline {
 mvn -f account-service/pom.xml -Dmaven.test.failure.ignore=true install'''
       }
     }
-    stage('build docker') {
-      steps {
-        sh 'docker build -t account-service account-service/.'
-      }
-    }
   }
 }
