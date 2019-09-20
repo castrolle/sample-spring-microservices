@@ -11,7 +11,7 @@ pipeline {
         sh 'ls'
       }
     }
-    stage('maven') {
+    stage('build microservice') {
       steps {
         sh '''#more account-service/pom.xml
 #mvn clean package -f account-service/pom.xml
@@ -21,6 +21,11 @@ pipeline {
 #export https_proxy=\'http://10.158.122.48:8080/\'
 
 mvn -f account-service/pom.xml -Dmaven.test.failure.ignore=true install'''
+      }
+    }
+    stage('build docker') {
+      steps {
+        sh 'docker build -t account-service account-service/.'
       }
     }
   }
