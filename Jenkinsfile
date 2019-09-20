@@ -4,7 +4,8 @@ pipeline {
     stage('ls') {
       steps {
         sh '''ls
-mvn --help'''
+#mvn --help
+docker ps'''
       }
     }
   }
