@@ -13,7 +13,8 @@ mvn --version
     }
     stage('build app') {
       steps {
-        sh 'mvn clean package -f account-service/pom.xml'
+        sh '''export PATH=${PATH}:${M2_HOME}/bin
+mvn clean package -f account-service/pom.xml'''
       }
     }
     stage('build image') {
