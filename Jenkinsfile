@@ -1,13 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('ls') {
+    stage('enviroment') {
       steps {
         sh '''echo $M2_HOME
-export PATH2=${M2_HOME}/bin
-echo $PATH2
+export PATH=${PATH}:${M2_HOME}/bin
+echo $PATH
 
-#mvn --help
+mvn --version
 '''
       }
     }
