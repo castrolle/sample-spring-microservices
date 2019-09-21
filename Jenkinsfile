@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('ls') {
       steps {
-        sh '''ls
+        sh '''echo $M2_HOME
 #mvn --help
-docker ps'''
+'''
       }
     }
   }
