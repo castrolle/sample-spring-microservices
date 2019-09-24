@@ -1,8 +1,8 @@
 # Starting off with the Jenkins base Image
 FROM jenkins/jenkins:lts
  
-#ENV http_proxy http://10.158.122.48:8080/
-#ENV https_proxy http://10.158.122.48:8080/
+ENV http_proxy http://10.158.122.48:8080/
+ENV https_proxy http://10.158.122.48:8080/
  
 # Installing the plugins we need using the in-built install-plugins.sh script
 RUN /usr/local/bin/install-plugins.sh git matrix-auth workflow-aggregator docker-workflow blueocean credentials-binding
